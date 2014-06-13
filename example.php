@@ -2,7 +2,7 @@
 
 require "HTTP.php";
 
-$connection = Http::connect('velkoobchod.polyweb.cz/api');
+$connection = Http::connect('velkoobchod.erostore.cz/api');
 
 
 echo "<pre>";
@@ -15,7 +15,7 @@ try {
 			"email"			 => "john.doe@example.com",
 			"telefon"		 => 123654789,
 			"adresa"		 => "U stodoly 15",
-			"poznamka"		 => "Testování API, neposílat",
+			"poznamka"		 => "Děkuji",
 			"dodaci_metoda"	 => 2,
 			"mesto"			 => "České Budějovice",
 			"psc"			 => "370 01",
@@ -27,7 +27,7 @@ try {
 		]
 	];
 
-	print_r($connection->doPost("nova-objednavka?key=.......................................?development=1", $data));
+	print_r($connection->doPost("nova-objednavka?key=.......................................&development=1", $data));
 } catch (Exception $exc) {
 	if ($exc instanceof Api_Exception) {
 		echo $exc->getMessage() . "\n";
